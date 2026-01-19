@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-nl#5b=-og4qho!-@mz_z359n010ezga-=hyu1s4@wvh7h3coqq"
+SECRET_KEY = config("SECRET_KEY")
 
+ENV = config("DJANGO_ENV", deafult ="dev")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+if ENV == "dev":
+    DEBUG = config("DEBUG", default=True, cast=bool)
+else:
+    DEBUG = False
+
+ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(",")
+CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS").split(",")
 
 
 # Application definition
