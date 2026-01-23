@@ -1,3 +1,14 @@
+# Virtual environments
 **/.venv/
-**/__pychache__/
+
+# Python cache
+**/__pycache__/
+
+# Django migrations
 **/migrations/
+
+# Environment variables
+.env
+
+# macOS files
+.DS_Store
