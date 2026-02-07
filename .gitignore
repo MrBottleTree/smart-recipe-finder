@@ -1,9 +1,12 @@
-# Django local database
-db.sqlite3
-
 # Python cache
 __pycache__/
 *.pyc
+
+# Django migrations
+**/migrations/
+
+# Django local database
+db.sqlite3
 
 # Virtual environments
 venv/
