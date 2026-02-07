@@ -1,3 +1,13 @@
-**/.venv/
-**/__pychache__/
-**/migrations/
+# Django local database
+db.sqlite3
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# macOS junk
+.DS_Store
