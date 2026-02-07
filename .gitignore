@@ -1,14 +1,25 @@
+# ===============================
 # Virtual environments
+# ===============================
 **/.venv/
 
-# Python cache
+# ===============================
+# Python cache / compiled files
+# ===============================
 **/__pycache__/
+*.pyc
 
-# Django migrations
+# ===============================
+# Django files (IMPORTANT)
+# ===============================
+db.sqlite3
+.env
+.env.*
+
+# Ignore all Django migration files
 **/migrations/
 
-# Environment variables
-.env
-
+# ===============================
 # macOS files
+# ===============================
 .DS_Store
